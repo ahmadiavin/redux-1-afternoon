@@ -10,6 +10,8 @@ let RecipeCard = props => {
     ingredients,
     instructions
   } = props;
+
+
   const ingredientsDisplay = ingredients.map((ingredient, i) => {
     return <li key={i}>{ingredient}</li>;
   });
@@ -45,7 +47,8 @@ let RecipeCard = props => {
           d="M2.35352 57.3536L57.3535 3.3409M2.35352 2.64648L57.3535 56.6592"
           stroke="#FF9B42"
           strokeWidth="5"
-        />
+         
+         />
       </svg>
     </div>
   );
