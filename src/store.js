@@ -82,15 +82,14 @@ function reducer(state = initialState, action) {
         instructions
       };
       const newRecipes = [...state.recipes, recipe];
-      return {...state, recipes: newRecipes };
+      return { initialState, recipes: newRecipes };
 
-    case REMOVE_RECIPE: {
-      return Object.assign({}, state, {
-        items: [
-          ...state.newRecipes.filter(recipe => recipe.name !== action.name)
-        ]
-      });
-    }
+    case REMOVE_RECIPE:
+        // logic to delete item goes here
+        let recipeListCopy = [...state.recipes];
+        let updatedRecipeList = recipeListCopy.splice(1, payload.index)
+        return  { ...state, recipes: updatedRecipeList };
+   
 
     default:
       return state;
